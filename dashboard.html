@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBoost - Dashboard Siswa</title>
+    <link rel="stylesheet" href="style-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-bars" id="sidebar-toggle"></i>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="home">
+                <i class="fas fa-th-large"></i> <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-section="materi">
+                <i class="fas fa-book"></i> <span>Materi Belajar</span>
+            </a>
+            <a href="#" class="nav-item" data-section="tryout">
+                <i class="fas fa-edit"></i> <span>Tryout UTBK</span>
+            </a>
+            <a href="#" class="nav-item" data-section="jadwal">
+                <i class="fas fa-calendar-alt"></i> <span>Jadwal Kelas</span>
+            </a>
+            <a href="#" class="nav-item" data-section="mentor">
+                <i class="fas fa-user-graduate"></i> <span>Konsultasi Mentor</span>
+            </a>
+            <a href="#" class="nav-item" data-section="achievement-section">
+            <i class="fas fa-medal"></i> <span>Achievements</span>
+            </a>
+            <section id="achievement-section" class="content-section">
+                <div id="achievement-render-container"></div>
+            </section>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-item">
+                <i class="fas fa-user-circle"></i> <span>Profil</span>
+            </a>
+            <a href="index.html" class="nav-item logout">
+                <i class="fas fa-sign-out-alt"></i> <span>Keluar</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="header-left-empty"></div> 
+            <div class="logo-dashboard">Edu<span>Boost</span></div>
+            
+            <div class="header-right">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <img src="https://i.pravatar.cc/150?u=fadhil" alt="User" class="avatar">
+            </div>
+        </header>
+
+        <div id="content-area">
+            <section id="home" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info"><p>Progress Belajar</p><h3 id="home-progress-val">75%</h3></div>
+                        <div class="stat-icon purple"><i class="fas fa-tasks"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info"><p>Tryout Selesai</p><h3>12/15</h3></div>
+                        <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info"><p>Skor Rata-rata</p><h3>685</h3></div>
+                        <div class="stat-icon blue"><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="grid-left">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Lanjutkan Belajar</h4>
+                            </div>
+                            <div id="resume-learning-container">
+                                <p style="color:var(--text-muted); font-size: 0.9rem;">Pilih materi untuk mulai belajar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-right">
+                        <div class="card">
+                            <h4>Pengumuman</h4>
+                            <div class="event-item">
+                                <div class="event-details">
+                                    <h5>Tryout UTBK Nasional #13</h5>
+                                    <p>Dibuka 20 Feb 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="materi" class="content-section">
+                <div class="materi-header-wrapper">
+                    <div class="materi-nav-info">
+                        <button id="btn-back-materi" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali</button>
+                        <h3 id="materi-display-title">Pilih Jenjang Kelas</h3>
+                    </div>
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-materi" placeholder="Cari bab atau mapel...">
+                    </div>
+                </div>
+
+                <div id="materi-render-container" class="materi-grid">
+                    </div>
+            </section>
+
+            <section id="tryout" class="content-section">
+                <div class="card">
+                    <h3>Simulasi Tryout UTBK #12</h3>
+                    <div class="timer-display" style="margin: 20px 0; font-weight: bold; color: #ef4444;">
+                        Waktu Tersisa: <span id="timer">120:00</span>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-details">
+                            <h5>Tes Potensi Skolastik (TPS)</h5>
+                            <p>60 Soal • 90 Menit</p>
+                        </div>
+                        <button class="btn-join" onclick="startTimer()">Mulai Tes</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

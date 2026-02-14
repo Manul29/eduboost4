@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBoost | Bimbingan Belajar PTN Impian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+</section>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Edu<span>Boost</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+                <li class="theme-switch">
+                    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </div>
+                </li>
+
+                <li class="auth-buttons">
+                    <a href="javascript:void(0)" class="btn-login" onclick="openAuth('login')">Login</a>
+                    <a href="javascript:void(0)" class="btn-signup" onclick="openAuth('signup')">Sign Up</a>
+                </li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+   <div id="authModal" class="modal">
+        <div class="modal-content auth-modal-size">
+            <span class="close" onclick="closeAuth()">&times;</span>
+          <div id="loginSection">
+    <div class="pricing-header">
+        <h2>Selamat Datang Kembali</h2>
+        <p>Masuk untuk melanjutkan belajarmu.</p>
+    </div>
+
+    <form class="contact-form" id="login-form">
+        <input type="email" placeholder="Email Sekolah / Pribadi" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" id="login-btn" class="btn btn-primary btn-block">
+            <span class="btn-text">Masuk</span>
+            <div class="spinner" id="loader"></div>
+        </button>
+    </form>
+
+        <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+            Belum punya akun? <a href="javascript:void(0)" onclick="switchAuth('signup')" style="color: var(--primary); font-weight:600;">Daftar Gratis</a>
+        </p>
+    </div>
+
+            <div id="signupSection" style="display: none;">
+                <div class="pricing-header">
+                    <h2>Mulai Perjalananmu</h2>
+                    <p>Daftar sekarang dan raih kampus impian.</p>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="Nama Lengkap" required>
+                    <input type="email" placeholder="Email Aktif" required>
+                    <input type="password" placeholder="Buat Password" required>
+                    <button type="submit" class="btn btn-primary btn-block">Daftar Sekarang</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    Sudah punya akun? <a href="javascript:void(0)" onclick="switchAuth('login')" style="color: var(--primary); font-weight:600;">Login di sini</a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <h1>Wujudkan Mimpi Masuk <span>PTN Impian</span> Anda</h1>
+                <p>Pendampingan belajar intensif dengan kurikulum terupdate untuk membantu Anda menaklukkan UTBK dan seleksi mandiri.</p>
+                <div class="hero-btns">
+                    <button class="btn btn-primary" onclick="openPricing()">Coba Sekarang</button>
+                    <button class="btn btn-secondary" onclick="openDemo()">Lihat Demo <i class="fas fa-play-circle"></i></button>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <img src="belajar 2.png" alt="Siswa Belajar">
+            </div>
+        </div>
+    </section>
+
+    <div id="pricingModal" class="modal">
+        <div class="modal-content pricing-modal-width">
+            <span class="close" onclick="closePricing()">&times;</span>
+            <div class="pricing-header">
+                <h2>Pilih Paket Suksesmu</h2>
+                <p>Investasi terbaik untuk masa depan akademikmu.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter (1 Bulan)</h3>
+                    <div class="price">Rp 250rb</div>
+                    <p class="desc">Cocok untuk trial intensif</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Akses Materi Lengkap</li>
+                        <li><i class="fas fa-check"></i> Tryout Mingguan</li>
+                        <li><i class="fas fa-check"></i> Grup Diskusi Umum</li>
+                    </ul>
+                    <button class="btn btn-secondary btn-block">Daftar Sekarang</button>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="popular-tag">Paling Populer</div>
+                    <h3>Pro (6 Bulan)</h3>
+                    <div class="price">Rp 1.2jt</div>
+                    <p class="desc">Persiapan matang seleksi kampus</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Semua Fitur Starter</li>
+                        <li><i class="fas fa-check"></i> Mentor Pendamping</li>
+                        <li><i class="fas fa-check"></i> Evaluasi Rutin Personal</li>
+                        <li><i class="fas fa-check"></i> Bank Soal Premium</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block">Daftar Sekarang</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>Elite (12 Bulan)</h3>
+                    <div class="price">Rp 2jt</div>
+                    <p class="desc">Program full preparation sampai lolos</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Semua Fitur Pro</li>
+                        <li><i class="fas fa-check"></i> Bimbingan Intensif Privat</li>
+                        <li><i class="fas fa-check"></i> Konsultasi Jurusan</li>
+                        <li><i class="fas fa-check"></i> Garansi Belajar Ulang</li>
+                    </ul>
+                    <button class="btn btn-secondary btn-block">Daftar Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="features" id="program">
+        <div class="container reveal">
+            <h2 class="section-title">Mengapa Memilih EduBoost?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Mentor Berpengalaman</h3>
+                    <p>Belajar langsung dari alumni UI, ITB, & UGM yang ahli di bidangnya.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-book-open"></i></div>
+                    <h3>Materi Terupdate</h3>
+                    <p>Kurikulum yang selalu disesuaikan dengan standar seleksi PTN terbaru.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                    <h3>Analisis Tryout</h3>
+                    <p>Laporan perkembangan detail dengan sistem IRT seperti UTBK asli.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-laptop-house"></i></div>
+                    <h3>Fleksibel</h3>
+                    <p>Akses kelas online live atau rekaman kapan saja dan di mana saja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="demoModal" class="modal">
+        <div class="modal-content reveal">
+            <span class="close" onclick="closeDemo()">&times;</span>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+                <h3>Preview Kelas Online</h3>
+                <p>Rasakan pengalaman belajar interaktif bersama mentor kami.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <section class="testimonials" id="testimoni">
+        <div class="container reveal">
+            <h2 class="section-title">Apa Kata Mereka?</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testi-header">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Siswa 1">
+                        <div>
+                            <h4>Sarah Amalia</h4>
+                            <span>Lolos Kedokteran UI</span>
+                        </div>
+                    </div>
+                    <p>"Tryout di sini mirip banget sama aslinya! Mentornya juga asik diajak diskusi soal sulit."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testi-header">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Siswa 2">
+                        <div>
+                            <h4>Budi Santoso</h4>
+                            <span>Lolos STEI ITB</span>
+                        </div>
+                    </div>
+                    <p>"Sangat terbantu dengan fitur konsultasi jurusan. Akhirnya aku tau strategi nilai yang pas."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testi-header">
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Siswa 3">
+                        <div>
+                            <h4>Dina Kusuma</h4>
+                            <span>Lolos Ilkom UGM</span>
+                        </div>
+                    </div>
+                    <p>"Belajar jadi gak ngebosenin karena materinya visual dan mudah dipahami."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Siap Mengejar Kampus Impianmu?</h2>
+            <p>Bergabunglah dengan ribuan siswa lain yang telah sukses. Jangan tunda persiapanmu.</p>
+            <button class="btn btn-primary" onclick="openPricing()">Mulai Belajar Gratis</button>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container contact-grid reveal">
+            <div class="contact-info">
+                <h2>Hubungi Kami</h2>
+                <p>Punya pertanyaan seputar program? Tim kami siap membantu.</p>
+                <div class="info-item"><i class="fas fa-envelope"></i> hello@eduboost.com</div>
+                <div class="info-item"><i class="fab fa-whatsapp"></i> +62 812 3456 7890</div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Email Sekolah" required>
+                <textarea rows="5" placeholder="Pesan Anda"></textarea>
+                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand reveal">
+                <a href="#" class="logo" style="color: white;">Edu<span>Boost</span></a>
+                <p>&copy; 2023 EduBoost Indonesia.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#program">Program</a>
+                <a href="#testimoni">Testimoni</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
